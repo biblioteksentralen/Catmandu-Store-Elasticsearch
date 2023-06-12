@@ -271,7 +271,7 @@ sub search {
     my $docs = $res->{hits}{hits};
 
     my $hits
-        = {start => $start, limit => $limit, total => $res->{hits}{total},};
+        = {start => $start, limit => $limit, total => $res->{hits}{total}{value},};
 
     if ($bag) {
         $hits->{hits} = [map {$bag->get($_->{_id})} @$docs];
