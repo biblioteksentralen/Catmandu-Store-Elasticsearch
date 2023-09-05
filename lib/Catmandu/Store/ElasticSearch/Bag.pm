@@ -265,6 +265,7 @@ sub search {
         else {
             $es_args{body}{from} = $start;
         }
+        $es_args{body}{track_total_hits} = \1;
         $res = $self->store->es->search(%es_args);
     }
 
